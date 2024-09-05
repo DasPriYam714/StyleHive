@@ -29,11 +29,29 @@ const ShopContextProvider = (props) =>{
     useEffect(()=>{
 console.log(cartItems)
     },[cartItems])
+
+
+const getCartCount =()=>{
+    let totalCount=0;
+    for(const items in cartItems){{
+        
+            try{
+                if(cartItems[items]>0){
+                    totalCount += cartItems[items];
+                }
+            } catch (error){
+
+            }
+        }
+    }
+    return totalCount;
+}
+
     const currency ='$';
     const deliveryFee = 20;
 
     const value={
-        products, currency, deliveryFee,cartItems,addToCart
+        products, currency, deliveryFee,cartItems,addToCart, getCartCount
     }
 
     return(
