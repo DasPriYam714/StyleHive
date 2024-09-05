@@ -56,7 +56,7 @@ const applyFilter = () =>{
 
 useEffect(()=>{
   applyFilter();
-},[category,type])
+},[type])
 
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
@@ -97,7 +97,7 @@ useEffect(()=>{
 
             </p>
             <p className="flex gap-2">
-              <input className="w-3" type="button" value={'Bottomwear'}  onChange={toogleType}/> Bottomwear
+              <input className="w-3" type="checkbox" value={'Bottomwear'}  onChange={toogleType}/> Bottomwear
 
             </p>
             <p className="flex gap-2">
@@ -114,23 +114,13 @@ useEffect(()=>{
 
       {/* products part */}
       <div className="flex-1">
-        <div className="flex justify-between text-base sm:text-2xl mb-4s pb-8">
-
-          <Title text1={'ALL'} text2={'COLLECTIONS'}/>
-          {/* product sort */}
-          <select className="border-2 rounded border-gray-300 text-sm px-2">
-            <option value="relavent">Sort by: Relavent</option>
-            <option value="high-low">Sort by: High to Low</option>
-            <option value="low-high">Sort by: Low to High</option>
-          </select>
-
-        </div>
+        
         {/* All collection */}
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
         {
             collection.map((item,index)=>(
-                <ProductItem key={index} id={item._id} image={item.image} name={item.name} price={item.price}/>
+                <ProductItem key={index} id={item._id} image={item.image} name={item.name} price={item.price} description={item.description}/>
             ))
         }
 
