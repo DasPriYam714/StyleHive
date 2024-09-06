@@ -27,7 +27,7 @@ const ProductItem = ({id, name, image,price,description}) => {
     
     // </Link>
     <div className="max-auto">
-        <div className="flex flex-col justify-between max-auto">
+        <div className="flex flex-col justify-end max-auto">
      <div className="overflow-hidden">
      <img className="hover:scale-110 transition ease-in-out" src={image[0]} alt="product image" />
    </div>

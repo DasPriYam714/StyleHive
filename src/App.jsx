@@ -8,6 +8,8 @@ import Product from './components/Product';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cart from './pages/Cart';
+import CartTotal from './components/CartTotal';
+import PlaceOrder from './pages/PlaceOrder';
 
 function App() {
   
@@ -24,6 +26,8 @@ function App() {
       
         <Route path={'/product/:productId'} element={<Product/>}/>
       <Route path={'/cart'} element={<Cart/>}/>
+      <Route path={'/carttotal'} element={<CartTotal/>}/>
+      <Route path={'/placeorder'} element={<PlaceOrder/>}/>
      
     
   
