@@ -7,6 +7,7 @@ import Collection from './pages/Collection';
 import Product from './components/Product';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Cart from './pages/Cart';
 
 function App() {
   
@@ -22,7 +23,7 @@ function App() {
         <Route path={'/products'} element={<Collection/>}/>
       
         <Route path={'/product/:productId'} element={<Product/>}/>
-      {/* <Route path={'/products'} element={<Collection/>}/> */}
+      <Route path={'/cart'} element={<Cart/>}/>
      
     
   

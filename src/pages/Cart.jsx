@@ -1,0 +1,68 @@
+import { useContext, useEffect, useState } from "react"
+import { ShopContext } from "../context/ContextShop"
+import Title from "../components/Title";
+import { RxCross1 } from "react-icons/rx";
+
+
+const Cart = () => {
+
+    const { products, currency, cartItems, updateQuantity} = useContext(ShopContext);
+
+    const [cartData, setCartData] = useState([]);
+
+    useEffect(()=>{
+        const tempData =[];
+        for(const items in cartItems) {
+            if(cartItems[items]>0){
+                tempData.push({
+                    _id:items,
+                    quantity:cartItems[items]
+                });
+            }
+            setCartData(tempData);
+}},[cartItems])
+  return (
+    <div className="border-t pt-14">
+
+        <div className="text-2xl mb-3">
+            <Title text1={'Cart'} text2={'Items'}/>
+
+        </div>
+
+        <div>
+
+        <div>
+            {
+                cartData.map((item, index)=>{
+                    const productData = products.find((product)=>product._id === item._id);
+
+                    return(
+                        <div key={index} className="py-4 border-b text-gray-600 grid grid-cols-[4fr_0.5fr_0.5fr] items-center gap-4">
+                            <div className="flex items-start gap-6">
+                                <img src={productData.image[0]} alt="" className="w-16 sm:w-20"/>
+                                <div>
+                                    <p className="text-xs sm:text-lg font-medium">{productData.name}</p>
+                                    <div className="flex item-center gap-5 mt-2">
+                                        <p>{currency}{productData.price}</p>
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+                            <input className="border max-w-10 sm:max-10 px-1 sm:px-2 py-1 " type="number" min={1} defaultValue={item.quantity} />
+
+                            <RxCross1 onClick={()=>updateQuantity(item._id,0)} className="text-lg mr-4 sm:text-md cursor-pointer"/>
+
+                        </div>
+                    )
+                })
+            }
+        </div>
+
+        </div>
+      
+    </div>
+  )
+}
+
+export default Cart
