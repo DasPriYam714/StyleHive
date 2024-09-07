@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5 pt-2 border-t-2 border-gray-400">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5 pt-2 border-t-2  border-gray-400">
           <div className="flex text-lg my-5 gap-5 ">
             <TbBrandFacebook />
             <IoLogoGoogle />

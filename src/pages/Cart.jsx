@@ -23,7 +23,7 @@ const Cart = () => {
   }, [cartItems]);
 
   const handleRemoveItem = (itemId) => {
-    updateQuantity(null, itemId, 0); // Pass `null` for event as it's not used
+    updateQuantity(null, itemId, 0); 
   };
 
   const handleChangeQuantity = (itemId, change) => {
@@ -31,14 +31,14 @@ const Cart = () => {
     if (item) {
       const newQuantity = item.quantity + change;
       if (newQuantity >= 0) {
-        updateQuantity(null, itemId, newQuantity); // Update quantity through the context
+        updateQuantity(null, itemId, newQuantity); 
       }
     }
   };
 
   return (
-    <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
-      <div className="border-t pt-10 w-full sm:w-3/5">
+    <div className="flex flex-col sm:flex-row justify-between gap-1 sm:gap-10 pt-10 border-t">
+      <div className="border-t pt-10 sm:gap-10 w-full sm:w-3/5">
         <div className="text-2xl mb-3">
           <Title text1={"Cart"} text2={"Items"} />
         </div>
@@ -52,9 +52,9 @@ const Cart = () => {
               return (
                 <div
                   key={index}
-                  className="py-4 border-b text-gray-600 grid grid-cols-[4fr_0.5fr_0.5fr] items-center gap-4"
+                  className="py-4 w-full border-b text-gray-600 grid grid-cols-[4fr_0.5fr_0.5fr] items-center gap-4"
                 >
-                  <div className="flex items-start gap-6">
+                  <div className="flex items-start gap-6 justify-between">
                     <div className="flex">
                       <button
                         onClick={() => handleChangeQuantity(item._id, 1)} // Increment quantity
@@ -104,7 +104,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      <div className="w-full sm:w-2/5">
+      <div className="w-full sm:gap-10 sm:w-2/5 mt-10 sm:mt-1">
         <CartTotal />
         <div className="w-full text-center">
           <button
