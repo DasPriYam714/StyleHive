@@ -53,9 +53,9 @@ const Product = () => {
 
             </div>
             {/* product information */}
-            <div className="flex-1 justify-start">
-                <h1 className="font-medium text-2xl mt-2">{productData.name}</h1>
-                <div className="flex items-center gap-1 mt-2">
+            <div className="flex-1 items-center">
+                <h1 className="font-medium justify-center md:justify-start text-2xl mt-2">{productData.name}</h1>
+                <div className="flex justify-center items-center gap-1 mt-2">
                     <img src={assets.star_icon} alt="" className="w-3.5" />
                     <img src={assets.star_icon} alt="" className="w-3.5" />
                     <img src={assets.star_icon} alt="" className="w-3.5" />
@@ -63,11 +63,11 @@ const Product = () => {
                     <img src={assets.star_dull_icon} alt="" className="w-3.5" />
                     <p className="pl-2">{210}</p>
                 </div>
-                <p className="mt-5 text-3xl font-medium">{currency}{productData.price}</p>
+                <p className="mt-5 text-3xl font-medium ">{currency}{productData.price}</p>
                 <p className="mt-5 text-gray-400 md:4/5">{productData.description}</p>
                 <div className="flex flex-col gap-4 my-8">
                     <p>Product Size</p>
-                    <div className="flex gap-2">
+                    <div className="flex justify-center gap-2">
                         {productData.sizes.map((item,index)=>(
                             <button  className={`border py-2 px-4 bg-gray-200`} key={index}>{item}</button>
                         ))}
@@ -83,6 +83,18 @@ const Product = () => {
                     <p>Easy return and exchange policy within 7 days.</p>
 
                 </div>
+            </div>
+
+        </div>
+        <div className="mt-20">
+            <div className="flex">
+                <b className="border px-5 py-3 text-sm">Description</b>
+                <p className="border px-5 py-3 text-sm">Reviews</p>
+
+            </div>
+            <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-600 mb-10">
+                <p className="text-start">Discover the latest trends at our online clothing shop, where style meets convenience. Explore a wide range of fashionable apparel for men, women, and kids, from casual wear to formal attire. Enjoy easy browsing, secure checkout, and fast delivery. Elevate your wardrobe with quality, affordable pieces that suit every occasion. Shop now and redefine your fashion statement!</p>
+
             </div>
 
         </div>

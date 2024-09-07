@@ -1,10 +1,22 @@
-#root {
-  max-width: 1280px;
+/* #root {
+  max-width: 90%;
+  max-height: fullscreen;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
+  flex-direction: column;
+  justify-self: auto;
+} */
 
+.body{
+  max-width: 90%;
+  max-height: fullscreen;
+  margin: 0 auto;
+  padding: 0px 20px;
+  text-align: center;
+  flex-direction: column;
+  justify-self: auto;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
