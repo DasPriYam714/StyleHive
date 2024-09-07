@@ -120,9 +120,9 @@ const SignUp = () => {
             </div>
             <div>
                 <Link to={'/login'}>
-              <a href=""  className="text-sm text-primary-600 hover:underline text-[#3e42a4] font-semibold ps-2">
+              <p href=""  className="text-sm text-primary-600 hover:underline text-[#3e42a4] font-semibold ps-2">
                 Sign In!
-              </a>
+              </p>
               </Link>
             </div>
           </section>
